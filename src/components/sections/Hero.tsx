@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GitCommitHorizontal, Linkedin as LinkedinIcon, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 // Using direct SVG for GitHub since lucide uses different naming
 const GithubIcon = () => (
@@ -60,7 +60,7 @@ const Hero = () => {
             className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             aria-label="GitHub"
           >
-            <Github size={20} />
+            <GithubIcon />
           </a>
           <a
             href="https://linkedin.com/in/josua-simatupang"
@@ -69,7 +69,7 @@ const Hero = () => {
             className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
             aria-label="LinkedIn"
           >
-            <Linkedin size={20} />
+            <LinkedInIcon />
           </a>
           <a
             href="mailto:josuasimatupang6@gmail.com"

@@ -46,7 +46,7 @@ const Contact = () => {
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="GitHub"
             >
-              <Github size={20} />
+              <GithubIcon />
             </a>
             <a
               href="https://linkedin.com/in/josua-simatupang"
@@ -55,7 +55,7 @@ const Contact = () => {
               className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <LinkedInIcon />
             </a>
           </div>
         </motion.div>
