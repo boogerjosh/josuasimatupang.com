@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -44,6 +44,29 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --hero-grid-canvas: #f7f7f7;
+    --hero-grid-line: rgba(229, 229, 229, 0.34);
+    --hero-grid-glow-strong: rgba(255, 255, 255, 0.85);
+    --hero-grid-glow-soft: rgba(255, 255, 255, 0.55);
+    --hero-grid-dot: rgba(212, 212, 212, 0.95);
+    --hero-grid-accent-glow-a: rgba(255, 90, 0, 0.08);
+    --hero-grid-accent-glow-b: rgba(255, 90, 0, 0.06);
+    --hero-grid-accent-glow-c: rgba(255, 90, 0, 0.05);
+    --hero-grid-noise-dark: rgba(0, 0, 0, 0.5);
+    --hero-grid-noise-light: rgba(255, 255, 255, 0.9);
+    --hero-grid-noise-mid: rgba(0, 0, 0, 0.35);
+    --hero-grid-accent: #ff5a00;
+    --hero-grid-accent-ring: rgba(255, 90, 0, 0.08);
+    --hero-grid-accent-shadow: rgba(255, 90, 0, 0.35);
+    --hero-grid-cluster-primary: rgba(255, 90, 0, 0.8);
+    --hero-grid-cluster-secondary: rgba(255, 90, 0, 0.24);
+    --hero-grid-cluster-shadow: rgba(255, 90, 0, 0.18);
+
+    --hero-name-leading: #1a1715;
+    --hero-name-leading-shadow: rgba(26, 23, 21, 0.06);
+    --hero-name-accent: #87d1d6;
+    --hero-name-accent-shadow: rgba(135, 209, 214, 0.16);
   }
 
   .dark {
@@ -83,6 +106,29 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 220 15% 18%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --hero-grid-canvas: #0f1217;
+    --hero-grid-line: rgba(128, 146, 170, 0.14);
+    --hero-grid-glow-strong: rgba(34, 42, 56, 0.56);
+    --hero-grid-glow-soft: rgba(18, 24, 34, 0.72);
+    --hero-grid-dot: rgba(125, 142, 165, 0.42);
+    --hero-grid-accent-glow-a: rgba(255, 90, 0, 0.16);
+    --hero-grid-accent-glow-b: rgba(255, 90, 0, 0.12);
+    --hero-grid-accent-glow-c: rgba(255, 90, 0, 0.1);
+    --hero-grid-noise-dark: rgba(255, 255, 255, 0.18);
+    --hero-grid-noise-light: rgba(255, 255, 255, 0.45);
+    --hero-grid-noise-mid: rgba(120, 142, 168, 0.2);
+    --hero-grid-accent: #ff7a1a;
+    --hero-grid-accent-ring: rgba(255, 122, 26, 0.12);
+    --hero-grid-accent-shadow: rgba(255, 122, 26, 0.4);
+    --hero-grid-cluster-primary: rgba(255, 122, 26, 0.88);
+    --hero-grid-cluster-secondary: rgba(255, 122, 26, 0.28);
+    --hero-grid-cluster-shadow: rgba(255, 122, 26, 0.22);
+
+    --hero-name-leading: #f4eee7;
+    --hero-name-leading-shadow: rgba(0, 0, 0, 0.28);
+    --hero-name-accent: #9adfe3;
+    --hero-name-accent-shadow: rgba(154, 223, 227, 0.24);
   }
 }
 
@@ -97,5 +143,26 @@
 
   html {
     scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .hero-name {
+    font-family: "DM Serif Display", Georgia, serif;
+    font-size: clamp(4.5rem, 12vw, 8.75rem);
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+    text-wrap: balance;
+  }
+
+  .hero-name-leading {
+    color: var(--hero-name-leading);
+    text-shadow: 0 10px 30px var(--hero-name-leading-shadow);
+  }
+
+  .hero-name-accent {
+    color: var(--hero-name-accent);
+    font-style: italic;
+    text-shadow: 0 12px 32px var(--hero-name-accent-shadow);
   }
 }
