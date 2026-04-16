@@ -48,7 +48,7 @@ const projects: Project[] = [
     icon: Layers3,
   },
   {
-    title: "JEC Internal Dashboard",
+    title: "JEC Website",
     type: "Website Improvement",
     description:
       "Contributed to improving Jakarta Eye Center's profile website experience, refining frontend implementation and helping deliver a cleaner, more reliable web presence.",
