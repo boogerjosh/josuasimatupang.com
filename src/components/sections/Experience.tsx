@@ -79,6 +79,14 @@ const formatDuration = (start: { year: number; month: number }, end: { year: num
   return `${years}y ${months}m`;
 };
 
+const toggleExperience = (
+  itemId: string,
+  isOpen: boolean,
+  setOpenId: React.Dispatch<React.SetStateAction<string>>,
+) => {
+  setOpenId(isOpen ? "" : itemId);
+};
+
 const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -120,7 +128,7 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="relative overflow-hidden py-24 sm:py-28">
+    <section id="experience" className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
       <div className="relative mx-auto max-w-6xl px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -198,34 +206,33 @@ const Experience = () => {
                     }`}
                   style={isOpen ? { boxShadow: `inset 3px 0 0 ${item.accent}` } : undefined}
                 >
-                  <button
-                    type="button"
-                    onClick={() => setOpenId(isOpen ? "" : item.id)}
+                  <div
                     className="flex w-full items-start justify-between gap-4 px-5 py-5 text-left sm:px-6"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => toggleExperience(item.id, isOpen, setOpenId)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        toggleExperience(item.id, isOpen, setOpenId);
+                      }
+                    }}
                     aria-expanded={isOpen}
                     aria-controls={`${item.id}-content`}
                   >
                     <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                        <h3 className="text-lg font-semibold text-foreground sm:text-[1.35rem]">
-                          {item.title}
-                        </h3>
-                        <div className="flex items-center gap-2 text-sm">
-                          <span className="font-medium" style={{ color: item.accent }}>
-                            {item.company}
-                          </span>
-                          {item.companyUrl ? (
-                            <a
-                              href={item.companyUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              aria-label={`Open ${item.company}`}
-                              className="transition-opacity hover:opacity-80"
-                            >
-                              <ExternalLink className="h-3.5 w-3.5" style={{ color: item.accent }} />
-                            </a>
-                          ) : null}
-                        </div>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2"> <h3 className="text-lg font-semibold text-foreground sm:text-[1.35rem]"> {item.title} </h3> <div className="flex items-center gap-2 text-sm"> <span className="font-medium" style={{ color: item.accent }}> {item.company} </span> {item.companyUrl ? (<a href={item.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open ${item.company}`}
+                        className="transition-opacity hover:opacity-80"
+                        onClick={(event) => event.stopPropagation()}
+                        onKeyDown={(event) => event.stopPropagation()}
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" style={{ color: item.accent }} />
+                      </a>
+                      ) : null}
+                      </div>
                         {item.current ? (
                           <span className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
                             Current
@@ -247,7 +254,7 @@ const Experience = () => {
                         className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
                       />
                     </span>
-                  </button>
+                  </div>
 
                   <motion.div
                     id={`${item.id}-content`}

@@ -65,7 +65,7 @@ const Projects = () => {
   const supportingProjects = projects.filter((project) => !project.featured);
 
   return (
-    <section id="projects" className="relative overflow-hidden py-24 sm:py-28">
+    <section id="projects" className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
       <div className="relative mx-auto max-w-6xl px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -92,7 +92,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.55, delay: 0.12 }}
-            className="mt-14 overflow-hidden rounded-[32px] border border-border/60 bg-card/78 shadow-[0_28px_90px_rgba(15,23,42,0.1)] backdrop-blur-sm"
+            className="mt-10 overflow-hidden rounded-[32px] border border-border/60 bg-card/78 shadow-[0_28px_90px_rgba(15,23,42,0.1)] backdrop-blur-sm sm:mt-14"
           >
             <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
               <div className="border-b border-border/60 p-6 sm:p-8 lg:border-b-0 lg:border-r">

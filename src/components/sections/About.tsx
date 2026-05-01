@@ -12,13 +12,13 @@ const technologies = [
   "PostgreSQL",
   "Strapi",
   "REST APIs",
-  "Figma",
+  "AI-assisted workflows",
 ];
 
 const story = [
-  "I am a frontend engineer based in Jakarta with an unconventional start. I studied Civil Engineering at Universitas Sumatera Utara before realizing that building for the web was the work that kept pulling me back.",
-  "Today I work at Synergy Financial Advisers, where I build product and marketing experiences with a strong focus on clarity, performance, and maintainable frontend systems. I care about interfaces that feel polished, but I care just as much about the structure underneath them.",
-  "Outside of work, I keep exploring better ways to design and ship on the web, whether that means refining UI details, learning new tools, or building side projects that sharpen my thinking.",
+  "I'm a frontend engineer based in Jakarta. I started in Civil Engineering before realizing the web was the place I wanted to build.",
+  "At Synergy Financial Advisers, I work on product and marketing experiences with a strong focus on clarity, performance, and maintainable frontend systems.",
+  "I use AI-assisted tools to move faster on research, prototyping, and repetitive implementation, so I can stay focused on product thinking, UX quality, and production-ready code.",
 ];
 
 const About = () => {
@@ -26,7 +26,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="relative overflow-hidden py-24 sm:py-28">
+    <section id="about" className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
       <div className="relative mx-auto max-w-6xl px-6" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,11 +41,11 @@ const About = () => {
             Get to know <span className="italic text-primary">me.</span>
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            A closer look at how I think, what I build, and the tools I rely on most.
+            A quick look at how I work, what I build, and the tools behind it.
           </p>
         </motion.div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[0.92fr_1.18fr] lg:items-start">
+        <div className="mt-10 grid gap-10 sm:mt-14 lg:grid-cols-[0.92fr_1.18fr] lg:items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -57,11 +57,11 @@ const About = () => {
               <div className="relative">
                 <div className="space-y-4 text-sm text-muted-foreground sm:text-[0.96rem]">
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-4 w-4 text-primary" />
+                    <MapPin className="h-4 w-4 text-primary flex-shrink-0" />
                     <span>Jakarta, Indonesia</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Sparkles className="h-4 w-4 text-primary" />
+                    <Sparkles className="h-4 w-4 text-primary flex-shrink-0" />
                     <span>Frontend engineer focused on product UI, performance, and design implementation.</span>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ const About = () => {
                   The tools I reach for most
                 </h3>
                 <p className="max-w-md text-sm leading-6 text-muted-foreground">
-                  A practical stack for product work, content-heavy websites, and maintainable frontend systems.
+                  A practical stack and workflow for shipping polished, maintainable web products.
                 </p>
               </div>
 
