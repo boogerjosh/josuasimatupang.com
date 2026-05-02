@@ -32,12 +32,12 @@ const experiences: ExperienceItem[] = [
     accent: "#7dd7df",
     current: true,
     intro:
-      "Synergy Financial Advisers is a financial planning company where I own frontend delivery across public-facing and internal digital products, focusing on performance, usability, and maintainable implementation.",
+      "Synergy Financial Advisers is a financial planning company where I own frontend delivery across public-facing, recruitment, and internal digital products, focusing on performance, usability, and maintainable implementation.",
     highlights: [
-      "Executed the complete frontend development of Synergy's profile website using Next.js, Strapi, TypeScript, and Tailwind CSS to deliver a high-performance, SEO-optimized platform.",
-      "Engineered the frontend of Synergy's advisor recruitment platform from the ground up with Next.js, TypeScript, and Tailwind CSS, crafting a seamless, mobile-responsive experience that streamlined the application process.",
-      "Spearheaded the frontend development for an internal AI chatbot, architecting the UI and managing the client-side integration with the AI service API to improve the speed and accessibility of employee support.",
-      "Collaborate with the frontend team to build and launch a new internal employee dashboard, creating a centralized hub for resources that improves engagement and streamlines access to critical company information.",
+      "Executed the complete frontend development of Synergy's profile website with Next.js, TypeScript, and Tailwind CSS, delivering a high-performance, SEO-optimized platform with Lighthouse scores of 90+.",
+      "Engineered Synergy's advisor recruitment platform from the ground up, translating product requirements and UI/UX designs into reusable React components with TypeScript and modern state management using Zustand and Redux.",
+      "Spearheaded frontend development for an internal AI chatbot, managing client-side logic and REST API integrations that reduced employee support response times by approximately 30%.",
+      "Collaborate with product managers and designers in an agile environment, participating in code reviews, architecture discussions, and CI/CD workflow improvements to keep the codebase clean and maintainable.",
     ],
   },
   {
@@ -53,10 +53,10 @@ const experiences: ExperienceItem[] = [
     intro:
       "Jakarta Eye Center Hospitals & Clinics is a healthcare network where I worked on internal operational software used by teams across clinical and front office workflows.",
     highlights: [
-      "Delivered features for JEC's internal dashboard website using Telerik and Kendo UI, while diving deep into ASP.NET to support the product's feature set and stability.",
-      "Ensured a seamless cross-device experience through responsive implementation with jQuery and Bootstrap.",
-      "Authored user guides, tutorials, and FAQs that improved the end-user experience and made onboarding smoother for internal teams.",
-      "Collaborated closely with IT support to design an intuitive application for doctors, nurses, and front office staff.",
+      "Delivered features for JEC's internal dashboard website using Telerik and Kendo UI components, diving deep into ASP.NET to build technically sound, enterprise-grade applications.",
+      "Optimized application performance, accessibility, and responsiveness across browsers and mobile devices using jQuery, HTML5, and CSS3.",
+      "Collaborated closely with IT support to design intuitive applications for medical staff, debugging and resolving frontend issues in a timely manner.",
+      "Authored technical documentation and user guides that improved developer workflows and significantly enhanced end-user onboarding.",
     ],
   },
 ];

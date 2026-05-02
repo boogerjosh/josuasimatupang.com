@@ -20,7 +20,7 @@ const projects: Project[] = [
     title: "Autobot AI",
     type: "Featured Work",
     description:
-      "Internal AI assistant experience designed to make employee support faster and easier, from interface architecture to client-side API integration and day-to-day usability.",
+      "Internal AI chatbot experience built to reduce employee support response times, from client-side logic and REST API integration to day-to-day usability.",
     postLink:
       "https://www.linkedin.com/posts/synergyfinancialadvisers_experience-the-enhanced-autobot-ai-in-our-activity-7340664505728684032-gV-t?utm_source=share&utm_medium=member_desktop&rcm=ACoAADa5KJgB59PKUi7emDadHdW9FWjma3PReKk",
     accent: "#7dd7df",
@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "Synergy Financial Website",
     type: "Marketing Platform",
     description:
-      "Corporate website for a financial advisory firm. Built with Next.js and integrated with a headless CMS for content management.",
+      "SEO-optimized corporate website for a financial advisory firm, built with Next.js, TypeScript, and Tailwind CSS with strong Lighthouse performance.",
     link: "https://www.synergy.com.sg",
     accent: "#f29e38",
     icon: Globe,
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: "HopOn Recruitment Platform",
     type: "Recruitment Platform",
     description:
-      "Advisor recruitment platform for Synergy, built to create a smoother application journey and a clearer frontend experience for prospective candidates.",
+      "Advisor recruitment platform for Synergy, built from product requirements and UI/UX designs into reusable React components and a smoother candidate journey.",
     link: "https://hopon.synergy.com.sg",
     accent: "#7dd7df",
     icon: Layers3,

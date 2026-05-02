@@ -37,7 +37,7 @@ const Hero = () => {
           transition={{ delay: 0.4 }}
           className="text-xl sm:text-2xl text-muted-foreground mt-3 font-light"
         >
-          Frontend Engineer
+          Frontend Engineer specializing in React, TypeScript, and Next.js
         </motion.p>
         {/* <motion.p
           initial={{ opacity: 0, y: 20 }}

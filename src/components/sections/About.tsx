@@ -3,22 +3,29 @@ import { ArrowUpRight, MapPin, Sparkles } from "lucide-react";
 import { useRef } from "react";
 
 const technologies = [
-  "Next.js",
   "React",
   "TypeScript",
+  "Next.js",
+  "Vue.js",
+  "React Native",
   "Tailwind CSS",
   "Node.js",
   "Express.js",
+  "Redux",
+  "Zustand",
+  "Jest",
   "PostgreSQL",
-  "Strapi",
+  "MongoDB",
   "REST APIs",
-  "AI-assisted workflows",
+  "GraphQL",
+  "Docker",
 ];
 
 const story = [
-  "I'm a frontend engineer based in Jakarta. I started in Civil Engineering before realizing the web was the place I wanted to build.",
-  "At Synergy Financial Advisers, I work on product and marketing experiences with a strong focus on clarity, performance, and maintainable frontend systems.",
-  "I use AI-assisted tools to move faster on research, prototyping, and repetitive implementation, so I can stay focused on product thinking, UX quality, and production-ready code.",
+  "I'm a frontend engineer with over 2 years of experience specializing in React, TypeScript, and modern SSR frameworks like Next.js.",
+  "In financial services and healthcare environments, I translate complex UI/UX designs into scalable, high-performance web applications that are clear, responsive, and maintainable.",
+  "I use AI tools to leverage my productivity across research, prototyping, and repetitive implementation, while staying focused on product thinking, UX quality, and production-ready code.",
+  "I care about thoughtful state management, performance metrics, accessibility, and close collaboration with product, design, and engineering teams inside modern CI/CD workflows.",
 ];
 
 const About = () => {
@@ -62,7 +69,7 @@ const About = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Sparkles className="h-4 w-4 text-primary flex-shrink-0" />
-                    <span>Frontend engineer focused on product UI, performance, and design implementation.</span>
+                    <span>Frontend engineer focused on React, TypeScript, SSR apps, performance, and design implementation.</span>
                   </div>
                 </div>
 
@@ -95,7 +102,7 @@ const About = () => {
           >
             <div className="rounded-[30px] border border-border/60 bg-card/72 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:p-8">
               <h3 className="text-2xl font-semibold text-foreground sm:text-3xl">
-                I build for the web.
+                I build user-focused web products.
               </h3>
               <div className="mt-6 space-y-5 text-base leading-8 text-muted-foreground sm:text-[1.02rem]">
                 {story.map((paragraph) => (
