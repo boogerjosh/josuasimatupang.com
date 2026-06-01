@@ -32,12 +32,13 @@ const experiences: ExperienceItem[] = [
     accent: "#7dd7df",
     current: true,
     intro:
-      "Synergy Financial Advisers is a financial planning company where I own frontend delivery across public-facing, recruitment, and internal digital products, focusing on performance, usability, and maintainable implementation.",
+      "Synergy Financial Advisers is a licensed Singapore-based financial advisory firm providing investment, insurance, and fund-management advisory services. I own frontend delivery across its public profile website, advisor recruitment platform, internal company dashboard, and AI support tools.",
     highlights: [
-      "Executed the complete frontend development of Synergy's profile website with Next.js, TypeScript, and Tailwind CSS, delivering a high-performance, SEO-optimized platform with Lighthouse scores of 90+.",
-      "Engineered Synergy's advisor recruitment platform from the ground up, translating product requirements and UI/UX designs into reusable React components with TypeScript and modern state management using Zustand and Redux.",
-      "Spearheaded frontend development for an internal AI chatbot, managing client-side logic and REST API integrations that reduced employee support response times by approximately 30%.",
-      "Collaborate with product managers and designers in an agile environment, participating in code reviews, architecture discussions, and CI/CD workflow improvements to keep the codebase clean and maintainable.",
+      "Owned end-to-end frontend delivery for Synergy's public profile website, strengthening the company's digital presence for prospective clients and financial advisers with a scalable, mobile-first Next.js, TypeScript, and Tailwind CSS experience that achieved 90+ Lighthouse performance scores.",
+      "Built frontend features for Synergy's advisor recruitment platform and internal company dashboard, collaborating with the frontend team to support adviser acquisition and operational workflows using reusable React components, custom hooks, Zustand, Redux, and maintainable TypeScript conventions.",
+      "Developed Autobot AI, an internal chatbot interface for employee support workflows, integrating REST and GraphQL APIs with client-side interaction flows that reduced support response times by approximately 30%.",
+      "Collaborated with product managers, designers, backend engineers, frontend engineers, and business stakeholders in agile delivery, contributing to technical discussions, pull-request reviews, secure implementation practices, and CI/CD-aware frontend delivery.",
+      "Improved frontend developer experience by documenting reusable UI patterns, coding conventions, linting and formatting standards, and delivery workflows to make future feature development faster and more consistent.",
     ],
   },
   {
@@ -51,12 +52,12 @@ const experiences: ExperienceItem[] = [
     end: { year: 2023, month: 4 },
     accent: "#f7a81b",
     intro:
-      "Jakarta Eye Center Hospitals & Clinics is a healthcare network where I worked on internal operational software used by teams across clinical and front office workflows.",
+      "Jakarta Eye Center Hospitals & Clinics is an Indonesia-based eye care hospital and clinic network offering LASIK, cataract, retina, glaucoma, pediatric eye care, and other ophthalmology services. I worked on internal operational software where reliability and clear workflows directly supported healthcare operations.",
     highlights: [
-      "Delivered features for JEC's internal dashboard website using Telerik and Kendo UI components, diving deep into ASP.NET to build technically sound, enterprise-grade applications.",
-      "Optimized application performance, accessibility, and responsiveness across browsers and mobile devices using jQuery, HTML5, and CSS3.",
-      "Collaborated closely with IT support to design intuitive applications for medical staff, debugging and resolving frontend issues in a timely manner.",
-      "Authored technical documentation and user guides that improved developer workflows and significantly enhanced end-user onboarding.",
+      "Delivered enterprise dashboard features for internal hospital operations, helping staff manage operational workflows through ASP.NET-integrated frontend interfaces using Telerik and Kendo UI components.",
+      "Improved responsiveness, accessibility, and cross-browser performance across desktop and mobile devices using jQuery, HTML5, CSS3, and frontend debugging tools.",
+      "Integrated frontend components with backend services, collaborating with backend engineers and IT support teams to debug production issues and ship stable internal tools for healthcare operations.",
+      "Authored technical documentation and contributed to code reviews, improving onboarding, engineering consistency, and frontend delivery quality across the team.",
     ],
   },
 ];

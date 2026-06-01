@@ -37,18 +37,20 @@ const Hero = () => {
           transition={{ delay: 0.4 }}
           className="text-xl sm:text-2xl text-muted-foreground mt-3 font-light"
         >
-          Frontend Engineer specializing in React, TypeScript, and Next.js
+          Frontend Engineer building scalable web apps for financial services, healthcare, recruitment, and AI products.
         </motion.p>
-        {/* <motion.p
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
           className="text-muted-foreground mt-6 max-w-lg leading-relaxed"
         >
-          I build thoughtful, performant web experiences with modern tools.
-          Currently crafting interfaces at{" "}
-          <span className="text-foreground font-medium">Synergy Financial Advisers</span>.
-        </motion.p> */}
+          I turn business goals, UI/UX designs, and complex workflows into fast, secure,
+          mobile-first interfaces. Currently building public websites, recruitment journeys,
+          internal dashboards, and AI tools at{" "}
+          <span className="text-foreground font-medium">Synergy Financial Advisers</span>, a
+          licensed Singapore-based financial advisory firm.
+        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

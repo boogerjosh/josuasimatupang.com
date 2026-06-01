@@ -1,7 +1,6 @@
 import { motion, useInView } from "framer-motion";
-import { ArrowUpRight, Bot, BriefcaseBusiness, Globe, Layers3 } from "lucide-react";
+import { ArrowUpRight, Bot, BriefcaseBusiness, Globe, LayoutDashboard, Layers3 } from "lucide-react";
 import { useRef } from "react";
-import { Badge } from "@/components/ui/badge";
 
 type Project = {
   title: string;
@@ -20,7 +19,7 @@ const projects: Project[] = [
     title: "Autobot AI",
     type: "Featured Work",
     description:
-      "Internal AI chatbot experience built to reduce employee support response times, from client-side logic and REST API integration to day-to-day usability.",
+      "Internal AI chatbot for Synergy Financial Advisers employees, integrating REST and GraphQL APIs to answer support questions faster and reduce response times by roughly 30%.",
     postLink:
       "https://www.linkedin.com/posts/synergyfinancialadvisers_experience-the-enhanced-autobot-ai-in-our-activity-7340664505728684032-gV-t?utm_source=share&utm_medium=member_desktop&rcm=ACoAADa5KJgB59PKUi7emDadHdW9FWjma3PReKk",
     accent: "#7dd7df",
@@ -33,7 +32,7 @@ const projects: Project[] = [
     title: "Synergy Financial Website",
     type: "Marketing Platform",
     description:
-      "SEO-optimized corporate website for a financial advisory firm, built with Next.js, TypeScript, and Tailwind CSS with strong Lighthouse performance.",
+      "Public profile website for a licensed Singapore-based financial advisory firm, built to strengthen trust, improve search visibility, and keep performance scores above 90.",
     link: "https://www.synergy.com.sg",
     accent: "#f29e38",
     icon: Globe,
@@ -42,16 +41,24 @@ const projects: Project[] = [
     title: "HopOn Recruitment Platform",
     type: "Recruitment Platform",
     description:
-      "Advisor recruitment platform for Synergy, built from product requirements and UI/UX designs into reusable React components and a smoother candidate journey.",
+      "Recruitment platform that helps Synergy attract and onboard prospective financial advisors through a clearer candidate journey and reusable React product flows.",
     link: "https://hopon.synergy.com.sg",
     accent: "#7dd7df",
     icon: Layers3,
   },
   {
+    title: "Synergy Internal Dashboard",
+    type: "Internal Operations",
+    description:
+      "Company dashboard built with the frontend team to support adviser acquisition and internal workflows using reusable React components, custom hooks, Zustand, Redux, and TypeScript.",
+    accent: "#9b87f5",
+    icon: LayoutDashboard,
+  },
+  {
     title: "JEC Website",
     type: "Website Improvement",
     description:
-      "Contributed to improving Jakarta Eye Center's profile website experience, refining frontend implementation and helping deliver a cleaner, more reliable web presence.",
+      "Frontend improvements for Jakarta Eye Center Hospitals & Clinics, an eye care hospital and clinic network in Indonesia, focused on a cleaner and more reliable public web presence.",
     link: "https://jec.co.id/id",
     accent: "#f7a81b",
     icon: BriefcaseBusiness,
@@ -83,7 +90,7 @@ const Projects = () => {
             Product work <span className="italic text-primary">in motion.</span>
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            A mix of public-facing websites, internal products, and AI-powered tools built with a strong focus on usability and frontend craft.
+            A mix of public websites, recruitment products, and internal tools that connect frontend craft with clearer business outcomes.
           </p>
         </motion.div>
 

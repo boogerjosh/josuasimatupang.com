@@ -6,6 +6,9 @@ const technologies = [
   "React",
   "TypeScript",
   "Next.js",
+  "JavaScript ES6+",
+  "HTML5",
+  "CSS3",
   "Vue.js",
   "React Native",
   "Tailwind CSS",
@@ -13,19 +16,25 @@ const technologies = [
   "Express.js",
   "Redux",
   "Zustand",
+  "Custom Hooks",
   "Jest",
+  "Accessibility",
+  "Performance",
   "PostgreSQL",
   "MongoDB",
+  "Redis",
+  "Firebase",
   "REST APIs",
   "GraphQL",
   "Docker",
+  "CI/CD",
 ];
 
 const story = [
-  "I'm a frontend engineer with over 2 years of experience specializing in React, TypeScript, and modern SSR frameworks like Next.js.",
-  "In financial services and healthcare environments, I translate complex UI/UX designs into scalable, high-performance web applications that are clear, responsive, and maintainable.",
-  "I use AI tools to leverage my productivity across research, prototyping, and repetitive implementation, while staying focused on product thinking, UX quality, and production-ready code.",
-  "I care about thoughtful state management, performance metrics, accessibility, and close collaboration with product, design, and engineering teams inside modern CI/CD workflows.",
+  "I'm a frontend engineer with 3.5+ years of experience building scalable, secure, and mobile-first web applications across financial services, healthcare operations, recruitment platforms, internal dashboards, and AI products.",
+  "At Synergy Financial Advisers, a licensed Singapore-based financial advisory firm providing investment, insurance, and fund-management advisory services, I help ship digital products across the public website, advisor recruitment, internal dashboards, and employee support tools.",
+  "Before that, I worked with Jakarta Eye Center Hospitals & Clinics, an Indonesia-based eye care hospital and clinic network offering LASIK, cataract, retina, glaucoma, pediatric eye care, and other ophthalmology services.",
+  "My strength is owning frontend features end-to-end, collaborating across product, design, backend, and frontend teams, and turning complex business workflows into maintainable user-facing interfaces.",
 ];
 
 const About = () => {
@@ -69,7 +78,7 @@ const About = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Sparkles className="h-4 w-4 text-primary flex-shrink-0" />
-                    <span>Frontend engineer focused on React, TypeScript, SSR apps, performance, and design implementation.</span>
+                    <span>Frontend engineer focused on React, TypeScript, Next.js, architecture, state management, performance, and product-ready UI implementation.</span>
                   </div>
                 </div>
 
@@ -102,7 +111,7 @@ const About = () => {
           >
             <div className="rounded-[30px] border border-border/60 bg-card/72 p-6 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm sm:p-8">
               <h3 className="text-2xl font-semibold text-foreground sm:text-3xl">
-                I build user-focused web products.
+                I build interfaces that make complex businesses easier to use.
               </h3>
               <div className="mt-6 space-y-5 text-base leading-8 text-muted-foreground sm:text-[1.02rem]">
                 {story.map((paragraph) => (
@@ -117,7 +126,7 @@ const About = () => {
                   The tools I reach for most
                 </h3>
                 <p className="max-w-md text-sm leading-6 text-muted-foreground">
-                  A practical stack and workflow for shipping polished, maintainable web products.
+                  A practical stack for shipping polished, maintainable interfaces across marketing sites, product flows, dashboards, APIs, and internal tools.
                 </p>
               </div>
 
