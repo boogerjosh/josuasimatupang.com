@@ -44,7 +44,6 @@ const Navbar = () => {
     }
 
     setActiveSection(sectionId);
-    window.history.replaceState(null, "", `#${sectionId}`);
     window.scrollTo({
       top: Math.max(0, section.offsetTop - NAV_SCROLL_OFFSET),
       behavior: "smooth",
