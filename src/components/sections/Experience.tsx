@@ -1,6 +1,5 @@
-import { motion, useInView } from "framer-motion";
 import { ChevronDown, ExternalLink } from "lucide-react";
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 
 type ExperienceItem = {
   id: string;
@@ -36,7 +35,7 @@ const experiences: ExperienceItem[] = [
     highlights: [
       "Owned end-to-end frontend delivery for Synergy's public profile website, strengthening the company's digital presence for prospective clients and financial advisers with a scalable, mobile-first Next.js, TypeScript, and Tailwind CSS experience that achieved 90+ Lighthouse performance scores.",
       "Built frontend features for Synergy's advisor recruitment platform and internal company dashboard, collaborating with the frontend team to support adviser acquisition and operational workflows using reusable React components, custom hooks, Zustand, Redux, and maintainable TypeScript conventions.",
-      "Developed Autobot AI, an internal chatbot interface for employee support workflows, integrating REST and GraphQL APIs with client-side interaction flows that reduced support response times by approximately 30%.",
+      "Developed Autobot AI, an internal chatbot interface for employee support workflows, integrating REST and GraphQL APIs with client-side interaction flows that reduced support response times by approximately 30%, with in-development capabilities for Synergy web app generation, pitch deck generation, and image generation.",
       "Collaborated with product managers, designers, backend engineers, frontend engineers, and business stakeholders in agile delivery, contributing to technical discussions, pull-request reviews, secure implementation practices, and CI/CD-aware frontend delivery.",
       "Improved frontend developer experience by documenting reusable UI patterns, coding conventions, linting and formatting standards, and delivery workflows to make future feature development faster and more consistent.",
     ],
@@ -89,8 +88,6 @@ const toggleExperience = (
 };
 
 const Experience = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [openId, setOpenId] = useState(experiences[0].id);
 
   const { years, railBounds } = useMemo(() => {
@@ -129,31 +126,15 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
-      <div className="relative mx-auto max-w-6xl px-6" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            Career
-          </p>
-          <h2
-            className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
-          >
-            Work <span className="italic text-primary">history.</span>
+    <section id="experience" className="relative overflow-hidden py-12">
+      <div className="relative px-8">
+        <div className="max-w-3xl">
+          <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+            Work <span className="text-primary">history.</span>
           </h2>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.12 }}
-          className="mt-12 hidden rounded-[28px] border border-border/60 bg-background/45 px-6 py-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm md:block"
-        >
+        <div className="mt-12 hidden rounded-[28px] border border-border/60 bg-background/45 px-6 py-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm md:block">
           <div className="flex items-center justify-between gap-6 font-mono text-xs text-muted-foreground">
             {years.map((year) => (
               <span key={year}>{year}</span>
@@ -169,17 +150,14 @@ const Experience = () => {
               />
             ))}
             {experiences.map((item) => (
-              <motion.span
+              <span
                 key={item.id}
-                initial={{ opacity: 0, scaleX: 0.9 }}
-                animate={isInView ? { opacity: 1, scaleX: 1 } : {}}
-                transition={{ duration: 0.45, delay: 0.2 }}
                 className="absolute top-1/2 h-4 -translate-y-1/2 rounded-md border"
                 style={getRailStyle(item)}
               />
             ))}
           </div>
-        </motion.div>
+        </div>
 
         <div className="relative mt-10 space-y-4 sm:mt-12">
           <div className="absolute bottom-6 left-[18px] top-6 hidden w-px bg-border/70 sm:block" />
@@ -188,11 +166,8 @@ const Experience = () => {
             const isOpen = openId === item.id;
 
             return (
-              <motion.article
+              <article
                 key={item.id}
-                initial={{ opacity: 0, y: 24 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.45, delay: 0.16 + index * 0.12 }}
                 className="relative pl-0 sm:pl-10"
               >
                 <span
@@ -257,34 +232,27 @@ const Experience = () => {
                     </span>
                   </div>
 
-                  <motion.div
-                    id={`${item.id}-content`}
-                    initial={false}
-                    animate={{
-                      height: isOpen ? "auto" : 0,
-                      opacity: isOpen ? 1 : 0,
-                    }}
-                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-5 pb-6 sm:px-6">
-                      <div className="border-t border-border/60 pt-5">
-                        <p className="max-w-4xl text-[0.96rem] leading-7 text-muted-foreground">
-                          {item.intro}
-                        </p>
-                        <ul className="mt-5 space-y-3 max-w-5xl text-[0.96rem] leading-7 text-muted-foreground">
-                          {item.highlights.map((highlight) => (
-                            <li key={highlight} className="flex gap-3">
-                              <span className="mt-[0.7rem] h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: item.accent }} />
-                              <span>{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
+                  {isOpen ? (
+                    <div id={`${item.id}-content`} className="overflow-hidden">
+                      <div className="px-5 pb-6 sm:px-6">
+                        <div className="border-t border-border/60 pt-5">
+                          <p className="max-w-4xl text-[0.96rem] leading-7 text-muted-foreground">
+                            {item.intro}
+                          </p>
+                          <ul className="mt-5 space-y-3 max-w-5xl text-[0.96rem] leading-7 text-muted-foreground">
+                            {item.highlights.map((highlight) => (
+                              <li key={highlight} className="flex gap-3">
+                                <span className="mt-[0.7rem] h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: item.accent }} />
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </motion.div>
+                  ) : null}
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>

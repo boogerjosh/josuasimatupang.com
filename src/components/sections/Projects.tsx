@@ -1,6 +1,19 @@
-import { motion, useInView } from "framer-motion";
-import { ArrowUpRight, Bot, BriefcaseBusiness, Globe, LayoutDashboard, Layers3 } from "lucide-react";
-import { useRef } from "react";
+import { ArrowUpRight } from "lucide-react";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 type Project = {
   title: string;
@@ -9,9 +22,7 @@ type Project = {
   postLink?: string;
   type: string;
   accent: string;
-  icon: typeof Globe;
-  featured?: boolean;
-  embedUrl?: string;
+  imageSrcs?: string[];
 };
 
 const projects: Project[] = [
@@ -23,10 +34,15 @@ const projects: Project[] = [
     postLink:
       "https://www.linkedin.com/posts/synergyfinancialadvisers_experience-the-enhanced-autobot-ai-in-our-activity-7340664505728684032-gV-t?utm_source=share&utm_medium=member_desktop&rcm=ACoAADa5KJgB59PKUi7emDadHdW9FWjma3PReKk",
     accent: "#7dd7df",
-    icon: Bot,
-    featured: true,
-    embedUrl:
-      "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7340260455086465024?compact=1",
+    imageSrcs: [
+      "/autobot-1.png",
+      "/autobot-2.png",
+      "/autobot-3.png",
+      "/autobot-4.png",
+      "/autobot-5.png",
+      "/autobot-6.png",
+      "/autobot-7.png",
+    ],
   },
   {
     title: "Synergy Financial Website",
@@ -35,24 +51,29 @@ const projects: Project[] = [
       "Public profile website for a licensed Singapore-based financial advisory firm, built to strengthen trust, improve search visibility, and keep performance scores above 90.",
     link: "https://www.synergy.com.sg",
     accent: "#f29e38",
-    icon: Globe,
   },
   {
     title: "HopOn Recruitment Platform",
     type: "Recruitment Platform",
     description:
       "Recruitment platform that helps Synergy attract and onboard prospective financial advisors through a clearer candidate journey and reusable React product flows.",
-    link: "https://hopon.synergy.com.sg",
+    imageSrcs: [
+      "/hopon-1-web.png",
+      "/hopon-2-web.png",
+      "/hopon-3-web.png",
+      "/hopon-4-web.png",
+      "/hopon-5-web.png",
+      "/hopon-6-web.png",
+      "/hopon-7-web.png",
+    ],
     accent: "#7dd7df",
-    icon: Layers3,
   },
   {
     title: "Synergy Internal Dashboard",
     type: "Internal Operations",
     description:
-      "Company dashboard built with the frontend team to support adviser acquisition and internal workflows using reusable React components, custom hooks, Zustand, Redux, and TypeScript.",
+      "Company dashboard built with the frontend team to support adviser acquisition and internal workflows using reusable React components, custom hooks, Zustand, Redux, TypeScript, and Jest.",
     accent: "#9b87f5",
-    icon: LayoutDashboard,
   },
   {
     title: "JEC Website",
@@ -61,107 +82,85 @@ const projects: Project[] = [
       "Frontend improvements for Jakarta Eye Center Hospitals & Clinics, an eye care hospital and clinic network in Indonesia, focused on a cleaner and more reliable public web presence.",
     link: "https://jec.co.id/id",
     accent: "#f7a81b",
-    icon: BriefcaseBusiness,
   },
 ];
 
-const Projects = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const featuredProject = projects.find((project) => project.featured);
-  const supportingProjects = projects.filter((project) => !project.featured);
+const ProjectImageModal = ({ project }: { project: Project }) => {
+  const projectGallery = project.imageSrcs;
+
+  if (!projectGallery) {
+    return null;
+  }
 
   return (
+    <DialogContent className="max-h-[92vh] max-w-[min(1120px,calc(100vw-2rem))] overflow-hidden rounded-[24px] border-border/70 bg-background/95 p-0 shadow-[0_28px_90px_rgba(15,23,42,0.28)]">
+      <DialogHeader className="border-b border-border/60 px-5 py-4 pr-12 text-left">
+        <DialogTitle className="text-base sm:text-lg">{project.title}</DialogTitle>
+      </DialogHeader>
+      <div className="bg-muted/30 p-4 sm:p-5">
+        <Carousel opts={{ align: "start", loop: projectGallery.length > 1 }} className="w-full">
+          <CarouselContent className="-ml-0">
+            {projectGallery.map((imageSrc, imageIndex) => (
+              <CarouselItem key={imageSrc} className="pl-0">
+                <figure className="overflow-hidden border border-border/60 shadow-[0_14px_36px_rgba(15,23,42,0.1)]">
+                  <img
+                    src={imageSrc}
+                    alt={`${project.title} screenshot ${imageIndex + 1}`}
+                    className="h-[min(68vh,720px)] w-full object-contain"
+                  />
+                  <figcaption className="border-t border-border/60 px-4 py-3 text-xs text-muted-foreground">
+                    {imageIndex + 1} / {projectGallery.length}
+                  </figcaption>
+                </figure>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-3 top-1/2 h-10 w-10 -translate-y-1/2 bg-background/90 shadow-[0_10px_24px_rgba(15,23,42,0.18)]" />
+          <CarouselNext className="right-3 top-1/2 h-10 w-10 -translate-y-1/2 bg-background/90 shadow-[0_10px_24px_rgba(15,23,42,0.18)]" />
+        </Carousel>
+      </div>
+    </DialogContent>
+  );
+};
+
+const Projects = () => {
+  return (
     <section id="projects" className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
-      <div className="relative mx-auto max-w-6xl px-6" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl"
-        >
-          <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            Projects
-          </p>
-          <h2
-            className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
-            style={{ fontFamily: '"DM Serif Display", Georgia, serif' }}
-          >
-            Product work <span className="italic text-primary">in motion.</span>
+      <div className="relative px-8">
+        <div className="max-w-3xl">
+          <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+            Product work <span className="text-primary">in practice.</span>
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
             A mix of public websites, recruitment products, and internal tools that connect frontend craft with clearer business outcomes.
           </p>
-        </motion.div>
-
-        {featuredProject ? (
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.55, delay: 0.12 }}
-            className="mt-10 overflow-hidden rounded-[32px] border border-border/60 bg-card/78 shadow-[0_28px_90px_rgba(15,23,42,0.1)] backdrop-blur-sm sm:mt-14"
-          >
-            <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="border-b border-border/60 p-6 sm:p-8 lg:border-b-0 lg:border-r">
-                <div className="flex items-center gap-3 text-sm font-medium" style={{ color: featuredProject.accent }}>
-                  <featuredProject.icon className="h-4 w-4" />
-                  <span>{featuredProject.type}</span>
-                </div>
-                <h3 className="mt-5 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                  {featuredProject.title}
-                </h3>
-                <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground sm:text-[1.02rem]">
-                  {featuredProject.description}
-                </p>
-                {featuredProject.postLink ? (
-                  <a
-                    href={featuredProject.postLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary transition-opacity hover:opacity-80"
-                  >
-                    See the post here on LinkedIn
-                    <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                ) : null}
-              </div>
-
-              <div className="p-4 sm:p-6">
-                <div className="overflow-hidden rounded-[24px] border border-border/60 bg-background/70 shadow-[0_18px_50px_rgba(15,23,42,0.08)]">
-                  <iframe
-                    src={featuredProject.embedUrl}
-                    title="Autobot AI LinkedIn post"
-                    className="h-[420px] w-full bg-transparent"
-                    frameBorder="0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        ) : null}
+        </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {supportingProjects.map((project, index) => {
-            const Icon = project.icon;
+          {projects.map((project) => {
+            const previewImage = project.imageSrcs?.[0];
+            const projectGallery = project.imageSrcs;
 
             return (
-              <motion.article
+              <article
                 key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.45, delay: 0.18 + index * 0.08 }}
                 className="group rounded-[28px] border border-border/60 bg-card/72 p-6 shadow-[0_20px_50px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-border/90 hover:bg-card/85"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div
-                    className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border/60 bg-background/70"
-                    style={{ color: project.accent }}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  {project.link ? (
+                  {projectGallery ? (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button
+                          type="button"
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition-colors hover:text-foreground"
+                          aria-label={`Open ${project.title} screenshot`}
+                        >
+                          <ArrowUpRight className="h-4 w-4" />
+                        </button>
+                      </DialogTrigger>
+                      <ProjectImageModal project={project} />
+                    </Dialog>
+                  ) : project.link ? (
                     <a
                       href={project.link}
                       target="_blank"
@@ -185,7 +184,27 @@ const Projects = () => {
                     {project.description}
                   </p>
                 </div>
-              </motion.article>
+
+                {previewImage && projectGallery ? (
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <button
+                        type="button"
+                        className="mt-6 block w-full overflow-hidden border border-border/60 bg-background/70 text-left shadow-[0_14px_32px_rgba(15,23,42,0.08)] transition-opacity hover:opacity-90"
+                        aria-label={`Open ${project.title} screenshot`}
+                      >
+                        <img
+                          src={previewImage}
+                          alt={`${project.title} screenshot`}
+                          className="aspect-[16/10] w-full object-cover object-top"
+                          loading="lazy"
+                        />
+                      </button>
+                    </DialogTrigger>
+                    <ProjectImageModal project={project} />
+                  </Dialog>
+                ) : null}
+              </article>
             );
           })}
         </div>

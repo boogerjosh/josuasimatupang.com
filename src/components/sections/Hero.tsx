@@ -1,88 +1,109 @@
-import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
-import BackgroundGrid from "@/components/BackgroundGrid";
+import { ArrowDownRight, Mail } from "lucide-react";
 
-// Using direct SVG for GitHub since lucide uses different naming
 const GithubIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
 );
+
 const LinkedInIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="28"
+    height="28"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect width="4" height="12" x="2" y="9" />
+    <circle cx="4" cy="4" r="2" />
+  </svg>
 );
+
+const scrollToProjects = () => {
+  const section = document.getElementById("projects");
+
+  if (!section) {
+    return;
+  }
+
+  window.history.replaceState(null, "", "#projects");
+  window.scrollTo({
+    top: Math.max(0, section.offsetTop - 112),
+    behavior: "smooth",
+  });
+};
 
 const Hero = () => {
   return (
-    <section className="relative isolate flex min-h-screen items-center overflow-hidden">
-      <div className="relative z-10 max-w-3xl mx-auto px-6 py-24 w-full">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-primary font-mono text-sm mb-4"
-        >
-          Hi, I'm
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="hero-name max-w-5xl"
-        >
-          <span className="hero-name-leading">Josua </span>
-          <span className="hero-name-accent">Simatupang</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-xl sm:text-2xl text-muted-foreground mt-3 font-light"
-        >
-          Frontend Engineer building scalable web apps for financial services, healthcare, recruitment, and AI products.
-        </motion.p>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="text-muted-foreground mt-6 max-w-lg leading-relaxed"
-        >
-          I turn business goals, UI/UX designs, and complex workflows into fast, secure,
-          mobile-first interfaces. Currently building public websites, recruitment journeys,
-          internal dashboards, and AI tools at{" "}
-          <span className="text-foreground font-medium">Synergy Financial Advisers</span>, a
-          licensed Singapore-based financial advisory firm.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="flex items-center gap-4 mt-8"
-        >
-          <a
-            href="https://github.com/boogerjosh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="GitHub"
+    <section className="relative isolate flex min-h-[calc(100vh-96px)] items-center overflow-hidden py-8 sm:py-12">
+      <div className="flex w-full flex-col gap-10 px-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12 xl:gap-16">
+        <h1 className="min-w-0 flex-1 text-4xl font-normal leading-[1.16] text-foreground sm:text-5xl md:text-6xl lg:max-w-[62%] lg:text-[4.35rem] xl:text-[5.4rem]">
+          <span className="mr-2 align-middle text-5xl sm:mr-3 sm:text-6xl lg:text-7xl" aria-hidden="true">
+            👋
+          </span>
+          Hi, I'm <strong className="font-bold text-primary">Josua</strong> - a frontend engineer and builder
+        </h1>
+
+        <div className="w-full max-w-xl shrink-0 lg:w-[25rem] xl:w-[33rem]">
+          <p className="text-xl font-normal leading-[1.7] text-muted-foreground sm:text-2xl xl:text-3xl">
+            I help teams turn complex product flows into scalable, polished web experiences with clarity, performance, and care.
+          </p>
+
+          <button
+            type="button"
+            onClick={scrollToProjects}
+            className="mt-7 inline-flex max-w-full items-center gap-3 rounded-full border border-foreground px-5 py-3 text-base text-foreground transition-opacity hover:opacity-70 sm:gap-4 sm:px-8 sm:py-4 sm:text-lg"
           >
-            <GithubIcon />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/josuasimatupang/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="LinkedIn"
-          >
-            <LinkedInIcon />
-          </a>
-          <a
-            href="mailto:joshsmtpng19@gmail.com"
-            className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-            aria-label="Email"
-          >
-            <Mail size={20} />
-          </a>
-        </motion.div>
+            <span className="truncate">View Projects & Impact</span>
+            <ArrowDownRight className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
+          </button>
+
+          <div className="mt-10 flex flex-wrap items-center gap-7 text-foreground sm:gap-9">
+            <a
+              href="mailto:joshsmtpng19@gmail.com"
+              className="transition-opacity hover:opacity-65"
+              aria-label="Email"
+            >
+              <Mail className="h-8 w-8" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/josuasimatupang/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-65"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
+            <a
+              href="https://github.com/boogerjosh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity hover:opacity-65"
+              aria-label="GitHub"
+            >
+              <GithubIcon />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

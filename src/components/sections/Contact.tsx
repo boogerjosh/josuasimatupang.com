@@ -1,5 +1,3 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Mail } from "lucide-react";
 
 const GithubIcon = () => (
@@ -10,23 +8,12 @@ const LinkedInIcon = () => (
 );
 
 const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="contact" className="py-16 sm:py-24">
-      <div className="max-w-3xl mx-auto px-6" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center"
-        >
-          <p className="mb-3 font-mono text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            Contacts
-          </p>
+    <section id="contact" className="py-12">
+      <div className="max-w-3xl mx-auto px-8">
+        <div className="text-center">
           <h3 className="text-2xl sm:text-3xl font-semibold text-foreground mb-4">
-            Let's connect
+            Let's stay in touch
           </h3>
           <p className="text-muted-foreground max-w-md mx-auto mb-8 leading-relaxed">
             I'm always open to new opportunities, collaborations, or just a friendly chat about
@@ -59,7 +46,7 @@ const Contact = () => {
               <LinkedInIcon />
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
