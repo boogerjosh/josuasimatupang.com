@@ -31,14 +31,13 @@ const experiences: ExperienceItem[] = [
     accent: "#7dd7df",
     current: true,
     intro:
-      "Synergy Financial Advisers is a licensed Singapore-based financial advisory firm providing investment, insurance, and fund-management advisory services. I own frontend delivery across its public profile website, advisor recruitment platform, internal company dashboard, and AI support tools.",
+      "Synergy Financial Advisers Ltd is a multi-award-winning independent financial advisory firm recognized among Singapore's fastest-growing companies. I build and maintain frontend products across internal operations, AI-driven business insights, recruitment, and corporate web presence.",
     highlights: [
-      "Owned end-to-end frontend delivery for Synergy’s public profile website, strengthening the company’s digital presence for prospective clients and financial advisers; built a scalable, mobile-first experience using Next.js, TypeScript, and Tailwind CSS and Strapi for the content management system, achieving 90+ Lighthouse performance scores.",
-      "Built frontend features for Synergy’s advisor recruitment platform using Next.js, TypeScript, Zustand, and Jest, supporting adviser acquisition workflows with maintainable frontend architecture and reusable implementation patterns.",
-      "Built internal company dashboard app using React, Next.js, TypeScript, reusable components, custom hooks, Redux and Jest; implemented Ant Design-based dashboard interfaces to support internal operational workflows.",
-      "Developed Autobot AI, an internal chatbot interface for employee support workflows, integrating REST API’s and with client-side interaction flows that reduced support response times by approximately 30%, with in-development capabilities for Synergy web app generation, pitch deck generation, and image generation.",
-      "Collaborated with product managers, designers, backend engineers, frontend engineers, and business stakeholders in agile delivery, contributing to technical discussions, pull-request reviews, secure implementation practices, and CI/CD-aware frontend delivery.",
-      "Improved frontend developer experience by documenting reusable UI patterns, coding conventions, linting and formatting standards, and delivery workflows to make future feature development faster and more consistent.",
+      "Develop and maintain an internal business platform with 50+ modules used by multiple internal teams, streamlining workflows and improving operational efficiency.",
+      "Built an internal AI-powered business intelligence agent using OpenAI LLMs and the Vercel AI SDK, independently delivering the end-to-end frontend used by 300+ financial advisers.",
+      "Develop and maintain Synergy's corporate website with Next.js, TypeScript, and Strapi CMS, shipping responsive and SEO-friendly pages with 90+ Lighthouse performance scores.",
+      "Develop and maintain Synergy's adviser recruitment platform with Next.js, TypeScript, and Zustand, building scalable high-performance interfaces and reusable components.",
+      "Collaborate closely with product managers, designers, backend engineers, and QA throughout the software development lifecycle to deliver high-quality features in an Agile environment.",
     ],
   },
   {
@@ -52,12 +51,11 @@ const experiences: ExperienceItem[] = [
     end: { year: 2023, month: 4 },
     accent: "#f7a81b",
     intro:
-      "Jakarta Eye Center Hospitals & Clinics is an Indonesia-based eye care hospital and clinic network offering LASIK, cataract, retina, glaucoma, pediatric eye care, and other ophthalmology services. I worked on internal operational software where reliability and clear workflows directly supported healthcare operations.",
+      "Jakarta Eye Center Hospitals is Indonesia's leading eye hospital network, operating 5 hospitals and 11 eye clinics nationwide. I worked on internal systems that supported hospital administration and operational workflows.",
     highlights: [
-      "Delivered enterprise dashboard features for internal hospital operations, helping staff manage operational workflows through ASP.NET-integrated frontend interfaces using Telerik and Kendo UI components.",
-      "Improved responsiveness, accessibility, and cross-browser performance across desktop and mobile devices using jQuery, HTML5, CSS3, and frontend debugging tools.",
-      "Integrated frontend components with backend services, collaborating with backend engineers and IT support teams to debug production issues and ship stable internal tools for healthcare operations.",
-      "Authored technical documentation and contributed to code reviews, improving onboarding, engineering consistency, and frontend delivery quality across the team.",
+      "Developed and maintained an internal hospital operations dashboard to streamline patient administration and daily workflows for hospital staff.",
+      "Built frontend modules with React.js, JavaScript, jQuery, Telerik UI, and Kendo UI integrated with ASP.NET REST APIs.",
+      "Authored comprehensive frontend and user documentation for application modules, accelerating developer onboarding and enabling staff adoption in day-to-day operations.",
     ],
   },
 ];
@@ -130,7 +128,7 @@ const Experience = () => {
     <section id="experience" className="relative overflow-hidden py-12">
       <div className="relative px-8">
         <div className="max-w-3xl">
-          <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Work <span className="text-primary">history.</span>
           </h2>
         </div>
@@ -198,7 +196,7 @@ const Experience = () => {
                     aria-controls={`${item.id}-content`}
                   >
                     <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2"> <h3 className="text-lg font-semibold text-foreground sm:text-[1.35rem]"> {item.title} </h3> <div className="flex items-center gap-2 text-sm"> <span className="font-medium" style={{ color: item.accent }}> {item.company} </span> {item.companyUrl ? (<a href={item.companyUrl}
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2"> <h3 className="text-base font-semibold text-foreground sm:text-[1.15rem]"> {item.title} </h3> <div className="flex items-center gap-2 text-sm"> <span className="font-medium" style={{ color: item.accent }}> {item.company} </span> {item.companyUrl ? (<a href={item.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Open ${item.company}`}

@@ -56,7 +56,7 @@ const Navbar = () => {
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="shrink-0 text-lg font-normal leading-none text-foreground transition-opacity hover:opacity-65 sm:text-xl md:text-2xl"
+          className="shrink-0 text-base font-normal leading-none text-foreground transition-opacity hover:opacity-65 sm:text-lg md:text-xl"
         >
           I'm Josua
         </button>
@@ -68,8 +68,8 @@ const Navbar = () => {
               key={item.id}
               type="button"
               onClick={() => handleNavClick(item.id)}
-              className={`shrink-0 text-lg font-normal leading-none text-foreground transition-opacity hover:opacity-65 sm:text-xl md:text-2xl ${activeSection === item.id ? "opacity-100" : "opacity-78"
-              }`}
+              className={`shrink-0 text-base font-normal leading-none text-foreground transition-opacity hover:opacity-65 sm:text-lg md:text-xl ${activeSection === item.id ? "opacity-100" : "opacity-78"
+                }`}
               aria-current={activeSection === item.id ? "page" : undefined}
             >
               {item.label}

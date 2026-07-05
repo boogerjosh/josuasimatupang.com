@@ -55,16 +55,16 @@ const Hero = () => {
   return (
     <section className="relative isolate flex min-h-[calc(100vh-96px)] items-center overflow-hidden py-8 sm:py-12">
       <div className="flex w-full flex-col gap-10 px-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12 xl:gap-16">
-        <h1 className="min-w-0 flex-1 text-4xl font-normal leading-[1.16] text-foreground sm:text-5xl md:text-6xl lg:max-w-[62%] lg:text-[4.35rem] xl:text-[5.4rem]">
+        <h1 className="min-w-0 flex-1 text-3xl font-normal leading-[1.16] text-foreground sm:text-4xl md:text-5xl lg:max-w-[62%] lg:text-[3.5rem] xl:text-[4.25rem]">
           <span className="mr-2 align-middle text-5xl sm:mr-3 sm:text-6xl lg:text-7xl" aria-hidden="true">
             👋
           </span>
-          Hi, I'm <strong className="font-bold text-primary">Josua</strong> - a frontend engineer and builder
+          Hi, I'm <strong className="font-bold text-primary">Josua</strong> - a frontend engineer building products for finance and healthcare
         </h1>
 
         <div className="w-full max-w-xl shrink-0 lg:w-[25rem] xl:w-[33rem]">
           <p className="text-xl font-normal leading-[1.7] text-muted-foreground sm:text-2xl xl:text-3xl">
-            I help teams turn complex product flows into scalable, polished web experiences with clarity, performance, and care.
+            I design and ship scalable web apps with React, Next.js, and TypeScript, from internal business platforms to SEO-friendly public websites.
           </p>
 
           <button

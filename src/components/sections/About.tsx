@@ -1,37 +1,50 @@
 import { ArrowUpRight, MapPin } from "lucide-react";
 
 const technologies = [
-  "React",
+  "JavaScript",
   "TypeScript",
+  "React.js",
   "Next.js",
-  "JavaScript ES6+",
-  "HTML5",
-  "CSS3",
   "Vue.js",
-  "React Native",
-  "Tailwind CSS",
   "Node.js",
   "Express.js",
+  "GraphQL",
   "Redux",
   "Zustand",
-  "Custom Hooks",
   "Jest",
-  "Performance",
   "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Firebase",
-  "REST APIs",
-  "GraphQL",
-  "Docker",
+  "Storybook",
+  "Better Auth",
   "CI/CD",
+  "Git",
+  "REST APIs",
+  "SEO",
+  "Accessibility",
+  "Performance Optimization",
+  "SSR / SSG / CSR",
+  "Code Splitting",
 ];
 
 const story = [
-  "I'm a frontend engineer with 3.5+ years of experience building scalable, secure, and mobile-first web applications across financial services, healthcare operations, recruitment platforms, internal dashboards, and AI products.",
-  "At Synergy Financial Advisers, a licensed Singapore-based financial advisory firm providing investment, insurance, and fund-management advisory services, I help ship digital products across the public website, advisor recruitment, internal dashboards, and employee support tools.",
-  "Before that, I worked with Jakarta Eye Center Hospitals & Clinics, an Indonesia-based eye care hospital and clinic network offering LASIK, cataract, retina, glaucoma, pediatric eye care, and other ophthalmology services.",
-  "My strength is owning frontend features end-to-end, collaborating across product, design, backend, and frontend teams, and turning complex business workflows into maintainable user-facing interfaces.",
+  "I'm a frontend engineer with 4+ years of experience building scalable web platforms across financial services and healthcare operations.",
+  "At Synergy Financial Advisers, a multi-award-winning independent financial advisory firm recognized among Singapore's fastest-growing companies, I develop and maintain internal platforms with 50+ modules, advisor recruitment products, and the corporate website.",
+  "I also built an internal AI-powered business intelligence agent with OpenAI LLMs and the Vercel AI SDK, used by 300+ financial advisers to retrieve business insights through natural language.",
+  "Previously at Jakarta Eye Center Hospitals, I developed internal operations dashboards and documentation that improved daily workflows and sped up onboarding for both developers and hospital staff.",
+];
+
+const education = [
+  {
+    school: "Hacktiv8 Indonesia",
+    program: "Certification in Full Stack JavaScript",
+    location: "Online",
+    period: "Jan 2022 - Apr 2022",
+  },
+  {
+    school: "Universitas Sumatera Utara",
+    program: "BSc in Civil Engineering",
+    location: "Medan, Indonesia",
+    period: "2017 - 2021",
+  },
 ];
 
 const About = () => {
@@ -39,7 +52,7 @@ const About = () => {
     <section id="about" className="relative overflow-hidden py-12">
       <div className="relative px-8">
         <div className="max-w-3xl">
-          <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Get to know <span className="text-primary">me.</span>
           </h2>
         </div>
@@ -95,12 +108,29 @@ const About = () => {
 
           <div className="space-y-8">
             <div className="rounded-[30px] border border-border/60 p-6 sm:p-8">
-              <h3 className="text-2xl font-semibold text-foreground sm:text-3xl">
+              <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
                 I build interfaces that make complex businesses easier to use.
               </h3>
               <div className="mt-6 space-y-5 text-base leading-8 text-muted-foreground sm:text-[1.02rem]">
                 {story.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[30px] border border-border/60 p-6 sm:p-8">
+              <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                Education & Training
+              </h3>
+              <div className="mt-6 space-y-5 text-base leading-8 text-muted-foreground sm:text-[1.02rem]">
+                {education.map((item) => (
+                  <div key={item.school + item.program}>
+                    <p className="font-medium text-foreground">{item.school}</p>
+                    <p>{item.program}</p>
+                    <p className="text-sm">
+                      {item.location} • {item.period}
+                    </p>
+                  </div>
                 ))}
               </div>
             </div>

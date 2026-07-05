@@ -27,10 +27,10 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "Autobot AI",
-    type: "Featured Work",
+    title: "Internal AI Business Intelligence Agent",
+    type: "Featured Work • Synergy",
     description:
-      "Internal AI chatbot for Synergy Financial Advisers employees, integrating REST and GraphQL APIs to answer support questions faster and reduce response times by roughly 30%.",
+      "AI-powered business intelligence interface built with OpenAI LLMs and the Vercel AI SDK, used by 300+ financial advisers to retrieve business insights through natural language.",
     postLink:
       "https://www.linkedin.com/posts/synergyfinancialadvisers_experience-the-enhanced-autobot-ai-in-our-activity-7340664505728684032-gV-t?utm_source=share&utm_medium=member_desktop&rcm=ACoAADa5KJgB59PKUi7emDadHdW9FWjma3PReKk",
     accent: "#7dd7df",
@@ -46,9 +46,9 @@ const projects: Project[] = [
   },
   {
     title: "Synergy Financial Website",
-    type: "Marketing Platform",
+    type: "Corporate Website",
     description:
-      "Public profile website for a licensed Singapore-based financial advisory firm, built to strengthen trust, improve search visibility, and keep performance scores above 90.",
+      "Corporate website built with Next.js, TypeScript, and Strapi CMS to deliver a responsive, SEO-friendly experience while maintaining 90+ Lighthouse performance scores.",
     link: "https://www.synergy.com.sg",
     accent: "#f29e38",
   },
@@ -69,19 +69,20 @@ const projects: Project[] = [
     accent: "#7dd7df",
   },
   {
-    title: "Synergy Internal Dashboard",
-    type: "Internal Operations",
+    title: "Barter.in",
+    type: "Hacktiv8 Project",
     description:
-      "Company dashboard built with the frontend team to support adviser acquisition and internal workflows using reusable React components, custom hooks, Zustand, Redux, TypeScript, and Jest.",
-    accent: "#9b87f5",
+      "Bartering marketplace application built as a team project where I contributed as Team Lead and Full Stack Developer.",
+    link: "https://github.com/boogerjosh/Barter-in-App",
+    accent: "#f7a81b",
   },
   {
-    title: "JEC Website",
-    type: "Website Improvement",
+    title: "Project Management Application",
+    type: "Personal / Learning Project",
     description:
-      "Frontend improvements for Jakarta Eye Center Hospitals & Clinics, an eye care hospital and clinic network in Indonesia, focused on a cleaner and more reliable public web presence.",
-    link: "https://jec.co.id/id",
-    accent: "#f7a81b",
+      "Project management application focused on task organization and workflow clarity, built to practice full-stack product delivery fundamentals.",
+    link: "https://github.com/boogerjosh/managment-app",
+    accent: "#6fcf97",
   },
 ];
 
@@ -128,7 +129,7 @@ const Projects = () => {
     <section id="projects" className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
       <div className="relative px-8">
         <div className="max-w-3xl">
-          <h2 className="text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
             Product work <span className="text-primary">in practice.</span>
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
@@ -177,7 +178,7 @@ const Projects = () => {
                   <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
                     {project.type}
                   </p>
-                  <h3 className="mt-3 text-2xl font-semibold text-foreground">
+                  <h3 className="mt-3 text-xl font-semibold text-foreground sm:text-[1.35rem]">
                     {project.title}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-[0.96rem]">

@@ -12,12 +12,12 @@ const Contact = () => {
     <section id="contact" className="py-12">
       <div className="max-w-3xl mx-auto px-8">
         <div className="text-center">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-foreground mb-4">
-            Let's stay in touch
+          <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4">
+            Let's build something useful
           </h3>
           <p className="text-muted-foreground max-w-md mx-auto mb-8 leading-relaxed">
-            I'm always open to new opportunities, collaborations, or just a friendly chat about
-            web development. Feel free to reach out.
+            I'm open to frontend engineering opportunities, product collaborations, and conversations
+            around scalable web platforms, AI-assisted workflows, and performance-focused UX.
           </p>
           <a
             href="mailto:joshsmtpng19@gmail.com"
