@@ -26,44 +26,47 @@ const experiences: ExperienceItem[] = [
     company: "Synergy Financial Advisers Ltd",
     location: "Remote",
     companyUrl: "https://www.synergy.com.sg",
-    period: "Sep. 2023 - Present",
+    period: "Sep 2023 – Present",
     start: { year: 2023, month: 9 },
     accent: "#7dd7df",
     current: true,
     intro:
-      "Synergy Financial Advisers Ltd is a multi-award-winning independent financial advisory firm recognized among Singapore's fastest-growing companies. I build and maintain frontend products across internal operations, AI-driven business insights, recruitment, and corporate web presence.",
+      "I work across Synergy's internal and public-facing products, taking frontend features from early discussions through implementation, release, and ongoing support.",
     highlights: [
-      "Develop and maintain an internal business platform with 50+ modules used by multiple internal teams, streamlining workflows and improving operational efficiency.",
-      "Built an internal AI-powered business intelligence agent using OpenAI LLMs and the Vercel AI SDK, independently delivering the end-to-end frontend used by 300+ financial advisers.",
-      "Develop and maintain Synergy's corporate website with Next.js, TypeScript, and Strapi CMS, shipping responsive and SEO-friendly pages with 90+ Lighthouse performance scores.",
-      "Develop and maintain Synergy's adviser recruitment platform with Next.js, TypeScript, and Zustand, building scalable high-performance interfaces and reusable components.",
-      "Collaborate closely with product managers, designers, backend engineers, and QA throughout the software development lifecycle to deliver high-quality features in an Agile environment.",
+      "Build and maintain OneSynergy, an internal platform with more than 50 modules used by around 350 advisers and 70 staff across the business.",
+      "Delivered the frontend for an internal assistant that helps advisers find business information using natural-language questions, along with admin tools for monitoring usage and costs.",
+      "Improved the performance of the OneSynergy web app, reducing p75 LCP from 2.2s to 1.31s and bringing its performance score close to 100.",
+      "Develop and maintain Synergy's corporate website and adviser recruitment platform, with an emphasis on responsive design, accessibility, SEO, and reusable components.",
+      "Support production releases and investigate issues using Sentry and Jam.dev, working closely with product, design, backend, and QA.",
     ],
   },
   {
     id: "jec",
     title: "Frontend Engineer",
-    company: "Jakarta Eye Center Hospitals & Clinics",
-    location: "Jakarta",
+    company: "Jakarta Eye Center Hospitals",
+    location: "Jakarta, Indonesia",
     companyUrl: "https://jec.co.id/id",
-    period: "Apr. 2022 - Apr. 2023",
+    period: "Apr 2022 – Apr 2023",
     start: { year: 2022, month: 4 },
     end: { year: 2023, month: 4 },
     accent: "#f7a81b",
     intro:
-      "Jakarta Eye Center Hospitals is Indonesia's leading eye hospital network, operating 5 hospitals and 11 eye clinics nationwide. I worked on internal systems that supported hospital administration and operational workflows.",
+      "I worked on internal software used by hospital staff to manage patient administration and day-to-day operational work.",
     highlights: [
-      "Developed and maintained an internal hospital operations dashboard to streamline patient administration and daily workflows for hospital staff.",
-      "Built frontend modules with React.js, JavaScript, jQuery, Telerik UI, and Kendo UI integrated with ASP.NET REST APIs.",
-      "Authored comprehensive frontend and user documentation for application modules, accelerating developer onboarding and enabling staff adoption in day-to-day operations.",
+      "Developed and maintained an internal hospital operations dashboard used by staff across administrative workflows.",
+      "Built frontend modules with React, and JavaScript",
+      "Wrote technical and user documentation that made application modules easier for developers to maintain and hospital staff to adopt.",
     ],
   },
 ];
 
 const monthValue = ({ year, month }: { year: number; month: number }) => year * 12 + (month - 1);
 
-const formatDuration = (start: { year: number; month: number }, end: { year: number; month: number }) => {
-  const totalMonths = monthValue(end) - monthValue(start) + 1;
+const formatDuration = (
+  start: { year: number; month: number },
+  end: { year: number; month: number },
+) => {
+  const totalMonths = monthValue(end) - monthValue(start);
   const years = Math.floor(totalMonths / 12);
   const months = totalMonths % 12;
 
@@ -129,7 +132,7 @@ const Experience = () => {
       <div className="relative px-8">
         <div className="max-w-3xl">
           <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Work <span className="text-primary">history.</span>
+            Selected <span className="text-primary">experience.</span>
           </h2>
         </div>
 
@@ -196,32 +199,53 @@ const Experience = () => {
                     aria-controls={`${item.id}-content`}
                   >
                     <div className="min-w-0 flex-1">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-2"> <h3 className="text-base font-semibold text-foreground sm:text-[1.15rem]"> {item.title} </h3> <div className="flex items-center gap-2 text-sm"> <span className="font-medium" style={{ color: item.accent }}> {item.company} </span> {item.companyUrl ? (<a href={item.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Open ${item.company}`}
-                        className="transition-opacity hover:opacity-80"
-                        onClick={(event) => event.stopPropagation()}
-                        onKeyDown={(event) => event.stopPropagation()}
-                      >
-                        <ExternalLink className="h-3.5 w-3.5" style={{ color: item.accent }} />
-                      </a>
-                      ) : null}
-                      </div>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="text-base font-semibold text-foreground sm:text-[1.15rem]">
+                          {item.title}
+                        </h3>
+
                         {item.current ? (
                           <span className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary">
                             Current
                           </span>
                         ) : null}
                       </div>
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {item.company}
-                        {item.location ? <span>, {item.location}</span> : null}
-                        <span className="mx-2 text-border">•</span>
-                        {item.period}
-                        <span className="mx-2 text-border">•</span>
-                        {formatDuration(item.start, item.current ? presentDate : item.end ?? presentDate)}
-                      </p>
+
+                      <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
+                        {item.companyUrl ? (
+                          <a
+                            href={item.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 font-medium transition-opacity hover:opacity-75"
+                            style={{ color: item.accent }}
+                            onClick={(event) => event.stopPropagation()}
+                          >
+                            {item.company}
+                            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                          </a>
+                        ) : (
+                          <span>{item.company}</span>
+                        )}
+
+                        {item.location ? (
+                          <>
+                            <span className="text-border">•</span>
+                            <span>{item.location}</span>
+                          </>
+                        ) : null}
+
+                        <span className="text-border">•</span>
+                        <span>{item.period}</span>
+
+                        <span className="text-border">•</span>
+                        <span>
+                          {formatDuration(
+                            item.start,
+                            item.current ? presentDate : item.end ?? presentDate,
+                          )}
+                        </span>
+                      </div>
                     </div>
 
                     <span className="mt-1 rounded-full p-2 text-muted-foreground transition-colors duration-200 hover:text-foreground">

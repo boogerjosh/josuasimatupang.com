@@ -55,16 +55,21 @@ const Hero = () => {
   return (
     <section className="relative isolate flex min-h-[calc(100vh-96px)] items-center overflow-hidden py-8 sm:py-12">
       <div className="flex w-full flex-col gap-10 px-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12 xl:gap-16">
-        <h1 className="min-w-0 flex-1 text-3xl font-normal leading-[1.16] text-foreground sm:text-4xl md:text-5xl lg:max-w-[62%] lg:text-[3.5rem] xl:text-[4.25rem]">
-          <span className="mr-2 align-middle text-5xl sm:mr-3 sm:text-6xl lg:text-7xl" aria-hidden="true">
-            👋
-          </span>
-          Hi, I'm <strong className="font-bold text-primary">Josua</strong> - a frontend engineer building products for finance and healthcare
-        </h1>
+        <div className="min-w-0 flex-1 lg:max-w-[62%]">
+          <h1 className="text-5xl font-bold leading-[1.05] text-primary sm:text-6xl md:text-7xl xl:text-[5.5rem]">
+            Josua Simatupang
+          </h1>
+
+          <p className="mt-5 max-w-3xl text-3xl font-normal leading-[1.2] text-foreground sm:text-4xl md:text-5xl">
+            Frontend Engineer. Thoughtful interfaces, dependable software.
+          </p>
+        </div>
 
         <div className="w-full max-w-xl shrink-0 lg:w-[25rem] xl:w-[33rem]">
           <p className="text-xl font-normal leading-[1.7] text-muted-foreground sm:text-2xl xl:text-3xl">
-            I design and ship scalable web apps with React, Next.js, and TypeScript, from internal business platforms to SEO-friendly public websites.
+            I build for the web, with a focus on the details that make products
+            feel good to use: clear interfaces, solid performance, and code
+            that remains easy to work with as the product grows.
           </p>
 
           <button
@@ -72,7 +77,7 @@ const Hero = () => {
             onClick={scrollToProjects}
             className="mt-7 inline-flex max-w-full items-center gap-3 rounded-full border border-foreground px-5 py-3 text-base text-foreground motion-reduce-safe-opacity transition-[transform,opacity] duration-150 ease-out active:scale-[0.97] hover:opacity-70 sm:gap-4 sm:px-8 sm:py-4 sm:text-lg"
           >
-            <span className="truncate">View Projects & Impact</span>
+            <span className="truncate">See my work</span>
             <ArrowDownRight className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
           </button>
 
@@ -84,6 +89,7 @@ const Hero = () => {
             >
               <Mail className="h-8 w-8" />
             </a>
+
             <a
               href="https://www.linkedin.com/in/josuasimatupang/"
               target="_blank"
@@ -93,6 +99,7 @@ const Hero = () => {
             >
               <LinkedInIcon />
             </a>
+
             <a
               href="https://github.com/boogerjosh"
               target="_blank"
