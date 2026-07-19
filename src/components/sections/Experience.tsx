@@ -175,7 +175,7 @@ const Experience = () => {
                 />
 
                 <div
-                  className={`overflow-hidden rounded-[22px] border transition-all duration-300 ${isOpen
+                  className={`overflow-hidden rounded-[22px] border transition-[border-color,background-color,box-shadow] duration-300 ease-out ${isOpen
                     ? "border-border/80 bg-card/90 shadow-[0_18px_48px_rgba(15,23,42,0.16)]"
                     : "border-border/55 bg-card/58 hover:border-border/80 hover:bg-card/76"
                     }`}
@@ -231,8 +231,12 @@ const Experience = () => {
                     </span>
                   </div>
 
-                  {isOpen ? (
-                    <div id={`${item.id}-content`} className="overflow-hidden">
+                  <div
+                    id={`${item.id}-content`}
+                    className="experience-panel"
+                    data-open={isOpen ? "true" : "false"}
+                  >
+                    <div className="overflow-hidden">
                       <div className="px-5 pb-6 sm:px-6">
                         <div className="border-t border-border/60 pt-5">
                           <p className="max-w-4xl text-[0.96rem] leading-7 text-muted-foreground">
@@ -249,7 +253,7 @@ const Experience = () => {
                         </div>
                       </div>
                     </div>
-                  ) : null}
+                  </div>
                 </div>
               </article>
             );

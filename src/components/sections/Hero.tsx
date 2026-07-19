@@ -70,7 +70,7 @@ const Hero = () => {
           <button
             type="button"
             onClick={scrollToProjects}
-            className="mt-7 inline-flex max-w-full items-center gap-3 rounded-full border border-foreground px-5 py-3 text-base text-foreground transition-opacity hover:opacity-70 sm:gap-4 sm:px-8 sm:py-4 sm:text-lg"
+            className="mt-7 inline-flex max-w-full items-center gap-3 rounded-full border border-foreground px-5 py-3 text-base text-foreground motion-reduce-safe-opacity transition-[transform,opacity] duration-150 ease-out active:scale-[0.97] hover:opacity-70 sm:gap-4 sm:px-8 sm:py-4 sm:text-lg"
           >
             <span className="truncate">View Projects & Impact</span>
             <ArrowDownRight className="h-5 w-5 shrink-0 sm:h-6 sm:w-6" />
@@ -79,7 +79,7 @@ const Hero = () => {
           <div className="mt-10 flex flex-wrap items-center gap-7 text-foreground sm:gap-9">
             <a
               href="mailto:joshsmtpng19@gmail.com"
-              className="transition-opacity hover:opacity-65"
+              className="motion-reduce-safe-opacity transition-opacity hover:opacity-65"
               aria-label="Email"
             >
               <Mail className="h-8 w-8" />
@@ -88,7 +88,7 @@ const Hero = () => {
               href="https://www.linkedin.com/in/josuasimatupang/"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-65"
+              className="motion-reduce-safe-opacity transition-opacity hover:opacity-65"
               aria-label="LinkedIn"
             >
               <LinkedInIcon />
@@ -97,7 +97,7 @@ const Hero = () => {
               href="https://github.com/boogerjosh"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-opacity hover:opacity-65"
+              className="motion-reduce-safe-opacity transition-opacity hover:opacity-65"
               aria-label="GitHub"
             >
               <GithubIcon />

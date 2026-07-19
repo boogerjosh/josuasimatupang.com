@@ -67,6 +67,16 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      transitionTimingFunction: {
+        "ease-out-strong": "var(--ease-out)",
+        "ease-in-out-strong": "var(--ease-in-out)",
+        "ease-drawer": "var(--ease-drawer)",
+      },
+      transitionDuration: {
+        "ui-fast": "var(--duration-ui-fast)",
+        ui: "var(--duration-ui)",
+        "ui-slow": "var(--duration-ui-slow)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -78,8 +88,8 @@ export default {
         },
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-down": "accordion-down var(--duration-accordion) var(--ease-out)",
+        "accordion-up": "accordion-up var(--duration-accordion) var(--ease-out)",
       },
     },
   },

@@ -21,7 +21,7 @@ const Contact = () => {
           </p>
           <a
             href="mailto:joshsmtpng19@gmail.com"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium text-sm motion-reduce-safe-colors transition-[transform,background-color] duration-150 ease-out active:scale-[0.97] hover:bg-primary/90"
           >
             <Mail size={16} />
             Say Hello

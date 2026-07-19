@@ -36,6 +36,14 @@
 
     --radius: 0.5rem;
 
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    --duration-ui-fast: 160ms;
+    --duration-ui: 250ms;
+    --duration-ui-slow: 300ms;
+    --duration-accordion: 200ms;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -98,6 +106,14 @@
     --input: 220 15% 18%;
     --ring: 192 60% 50%;
 
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+    --duration-ui-fast: 160ms;
+    --duration-ui: 250ms;
+    --duration-ui-slow: 300ms;
+    --duration-accordion: 200ms;
+
     --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -144,6 +160,21 @@
   html {
     scroll-behavior: smooth;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
@@ -161,5 +192,52 @@
 
   .hero-name-accent {
     color: var(--hero-name-accent);
+  }
+
+  .experience-panel {
+    display: grid;
+    transition:
+      grid-template-rows var(--duration-ui) var(--ease-out),
+      opacity var(--duration-ui) var(--ease-out);
+  }
+
+  .experience-panel[data-open="true"] {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+
+  .experience-panel[data-open="false"] {
+    grid-template-rows: 0fr;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .experience-panel {
+      transition: none;
+    }
+
+    .experience-panel[data-open="false"] {
+      display: none;
+    }
+
+    .experience-panel[data-open="true"] {
+      display: grid;
+    }
+  }
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+    .motion-reduce-safe-opacity {
+      transition: opacity 200ms ease !important;
+    }
+
+    .motion-reduce-safe-colors {
+      transition:
+        background-color 200ms ease,
+        border-color 200ms ease,
+        color 200ms ease !important;
+    }
   }
 }

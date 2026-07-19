@@ -40,13 +40,36 @@ function useCarousel() {
 
 const Carousel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement> & CarouselProps>(
   ({ orientation = "horizontal", opts, setApi, plugins, className, children, ...props }, ref) => {
-    const [carouselRef, api] = useEmblaCarousel(
-      {
+    const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
+
+    React.useEffect(() => {
+      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+      updatePreference();
+      mediaQuery.addEventListener("change", updatePreference);
+
+      return () => mediaQuery.removeEventListener("change", updatePreference);
+    }, []);
+
+    const emblaOptions = React.useMemo<CarouselOptions>(
+      () => ({
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
-      },
-      plugins,
+        duration: prefersReducedMotion ? 0 : (opts?.duration ?? 20),
+      }),
+      [opts, orientation, prefersReducedMotion],
     );
+
+    const [carouselRef, api] = useEmblaCarousel(emblaOptions, plugins);
+    React.useEffect(() => {
+      if (!api) {
+        return;
+      }
+
+      api.reInit(emblaOptions);
+    }, [api, emblaOptions]);
+
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
 

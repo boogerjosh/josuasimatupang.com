@@ -145,7 +145,7 @@ const Projects = () => {
             return (
               <article
                 key={project.title}
-                className="group rounded-[28px] border border-border/60 bg-card/72 p-6 shadow-[0_20px_50px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-border/90 hover:bg-card/85"
+                className="group rounded-[28px] border border-border/60 bg-card/72 p-6 shadow-[0_20px_50px_rgba(15,23,42,0.08)] backdrop-blur-sm motion-reduce-safe-colors transition-[border-color,background-color] duration-200 ease-out hover:border-border/90 hover:bg-card/85"
               >
                 <div className="flex items-start justify-between gap-4">
                   {projectGallery ? (
@@ -153,7 +153,7 @@ const Projects = () => {
                       <DialogTrigger asChild>
                         <button
                           type="button"
-                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition-colors hover:text-foreground"
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition-[transform,color,border-color,background-color] duration-150 ease-out active:scale-[0.97] hover:text-foreground"
                           aria-label={`Open ${project.title} screenshot`}
                         >
                           <ArrowUpRight className="h-4 w-4" />
@@ -166,7 +166,7 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition-colors hover:text-foreground"
+                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 bg-background/60 text-muted-foreground transition-[transform,color,border-color,background-color] duration-150 ease-out active:scale-[0.97] hover:text-foreground"
                       aria-label={`Open ${project.title}`}
                     >
                       <ArrowUpRight className="h-4 w-4" />
@@ -191,7 +191,7 @@ const Projects = () => {
                     <DialogTrigger asChild>
                       <button
                         type="button"
-                        className="mt-6 block w-full overflow-hidden border border-border/60 bg-background/70 text-left shadow-[0_14px_32px_rgba(15,23,42,0.08)] transition-opacity hover:opacity-90"
+                        className="mt-6 block w-full overflow-hidden border border-border/60 bg-background/70 text-left shadow-[0_14px_32px_rgba(15,23,42,0.08)] transition-[transform,opacity] duration-150 ease-out active:scale-[0.97] hover:opacity-90"
                         aria-label={`Open ${project.title} screenshot`}
                       >
                         <img
