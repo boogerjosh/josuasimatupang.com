@@ -2,25 +2,37 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 
 const technologies = [
   "TypeScript",
-  "JavaScript",
   "React",
   "Next.js",
-  "Vue",
-  "Node.js",
+  "Zustand",
+  "Redux",
+  "Strapi CMS",
+  "Vitest",
   "Storybook",
-  "Jest",
-  "PostgreSQL",
-  "Git",
+  "MCP",
+  "Vercel AI SDK",
 ];
 
 const story = [
-  "I'm a frontend engineer based in Jakarta. I enjoy turning complicated workflows into interfaces that feel clear, considered, and easy to use.",
+  "Frontend-focused software engineer with 4 years of experience building production web applications, AI-powered products, internal platforms, and responsive digital experiences.",
 
-  "Most of my work has been on products people rely on every day—from internal business tools to public-facing websites. I work closely with designers, product teams, and engineers to take ideas from early conversations through to production.",
+  "I currently work at Synergy, where I develop products across React, Next.js, TypeScript, APIs, AI integrations, Zustand, and Strapi CMS. My work extends beyond building interfaces—I translate complex product requirements and business workflows into reliable, scalable, and user-friendly solutions.",
 
-  "I care about the parts of frontend work that are easy to overlook: sensible structure, thoughtful interactions, good performance, and the small details that make a product feel dependable.",
+  "I am a key contributor to an internal AI-powered business intelligence platform used by 300+ financial advisers. I contribute throughout the development lifecycle, including requirements analysis, frontend architecture, API integration, code review, AI agents, MCP integrations, workflow automation, testing, and production improvements.",
 
-  "My path into software started with civil engineering before I moved into web development. It wasn't the most direct route, but it taught me to think in systems, work through practical constraints, and keep learning as I build.",
+  "I also develop and maintain Synergy's corporate website and adviser recruitment platform, focusing on reusable architecture, responsive design, SEO, accessibility, and performance.",
+
+  "Previously, I worked at JEC, Indonesia's leading eye hospital network, where I developed an internal hospital operations dashboard and created technical and user documentation that improved developer onboarding and system adoption.",
+
+  "I enjoy working at the intersection of frontend architecture, AI engineering, product development, and business impact.",
+];
+
+const selectedImpact = [
+  "Helped build an internal AI platform that enables financial advisers and internal teams to retrieve business insights through natural-language conversations.",
+  "Delivered Synergy's responsive, SEO-friendly corporate website with 90+ Lighthouse Performance scores.",
+  "Built scalable interfaces and reusable components for Synergy's adviser recruitment and onboarding platform.",
+  "Developed an internal hospital dashboard that streamlined patient administration and operational workflows.",
+  "Created comprehensive technical and user documentation to accelerate onboarding and improve daily system adoption.",
 ];
 
 const education = [
@@ -66,7 +78,7 @@ const About = () => {
                   </p>
 
                   <p className="mt-3 text-lg font-medium text-foreground">
-                    Frontend Engineer at Synergy Financial Advisers
+                    Software Engineer at Synergy Financial Advisers
                   </p>
 
                   <a
@@ -106,13 +118,25 @@ const About = () => {
           <div className="space-y-8">
             <article className="rounded-[30px] border border-border/60 p-6 sm:p-8">
               <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
-                I like making complicated things feel straightforward.
+                Frontend engineer with a product and AI engineering focus.
               </h3>
 
               <div className="mt-6 space-y-5 text-base leading-8 text-muted-foreground sm:text-[1.02rem]">
                 {story.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
+
+                <div className="pt-2">
+                  <p className="font-medium text-foreground">Selected impact</p>
+                  <ul className="mt-4 space-y-3">
+                    {selectedImpact.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </article>
 

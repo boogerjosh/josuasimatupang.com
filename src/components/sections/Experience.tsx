@@ -12,6 +12,7 @@ type ExperienceItem = {
   end?: { year: number; month: number };
   accent: string;
   intro: string;
+  techStack?: string[];
   highlights: string[];
   current?: boolean;
 };
@@ -22,7 +23,7 @@ const presentDate = { year: today.getFullYear(), month: today.getMonth() + 1 };
 const experiences: ExperienceItem[] = [
   {
     id: "synergy",
-    title: "Frontend Engineer",
+    title: "Software Engineer",
     company: "Synergy Financial Advisers Ltd",
     location: "Remote",
     companyUrl: "https://www.synergy.com.sg",
@@ -31,18 +32,28 @@ const experiences: ExperienceItem[] = [
     accent: "#7dd7df",
     current: true,
     intro:
-      "I work across Synergy's internal and public-facing products, taking frontend features from early discussions through implementation, release, and ongoing support.",
+      "Multi-award-winning independent financial advisory firm recognized among Singapore's Fastest-Growing Companies (2024–2026). I contribute across ReactJS, NextJS, TypeScript, APIs, AI integrations, and responsive web applications, turning complex product requirements and business workflows into reliable, user-friendly solutions.",
+    techStack: [
+      "ReactJS",
+      "NextJS",
+      "TypeScript",
+      "Webpack",
+      "Vitest",
+      "MCP",
+      "Vercel AI SDK",
+      "Redux",
+      "Storybook",
+    ],
     highlights: [
-      "Build and maintain OneSynergy, an internal platform with more than 50 modules used by around 350 advisers and 70 staff across the business.",
-      "Delivered the frontend for an internal assistant that helps advisers find business information using natural-language questions, along with admin tools for monitoring usage and costs.",
-      "Improved the performance of the OneSynergy web app, reducing p75 LCP from 2.2s to 1.31s and bringing its performance score close to 100.",
-      "Develop and maintain Synergy's corporate website and adviser recruitment platform, with an emphasis on responsive design, accessibility, SEO, and reusable components.",
-      "Support production releases and investigate issues using Sentry and Jam.dev, working closely with product, design, backend, and QA.",
+      "Key contributor to an internal AI platform that supports the R&D lifecycle, from requirements analysis and code review through development, bug fixing, AI agents, MCP integrations, and workflow automation used by 300+ financial advisers to retrieve business insights through natural language, significantly improving productivity.",
+      "Develop and maintain Synergy's corporate website using NextJS, TypeScript, and Strapi CMS, delivering a responsive, SEO-friendly experience with 90+ Lighthouse Performance scores.",
+      "Develop and maintain Synergy's adviser recruitment platform using NextJS, TypeScript, and Zustand, building scalable, high-performance user interfaces and reusable components.",
+      "Partner with product, design, backend, and QA teams to deliver complex AI, financial advisory, onboarding, and internal operations workflows.",
     ],
   },
   {
     id: "jec",
-    title: "Frontend Engineer",
+    title: "Software Engineer",
     company: "Jakarta Eye Center Hospitals",
     location: "Jakarta, Indonesia",
     companyUrl: "https://jec.co.id/id",
@@ -51,11 +62,11 @@ const experiences: ExperienceItem[] = [
     end: { year: 2023, month: 4 },
     accent: "#f7a81b",
     intro:
-      "I worked on internal software used by hospital staff to manage patient administration and day-to-day operational work.",
+      "Indonesia's leading eye hospital network, operating 5 hospitals and 11 eye clinics nationwide.",
+    techStack: ["React", "Jest", "Redux"],
     highlights: [
-      "Developed and maintained an internal hospital operations dashboard used by staff across administrative workflows.",
-      "Built frontend modules with React, and JavaScript",
-      "Wrote technical and user documentation that made application modules easier for developers to maintain and hospital staff to adopt.",
+      "Developed and maintained an internal hospital operations dashboard that streamlined patient administration and operational workflows for hospital staff using ReactJS, Jest, and Redux.",
+      "Authored comprehensive frontend and user documentation for application modules, accelerating developer onboarding and enabling hospital staff to effectively adopt and use the system in daily operations.",
     ],
   },
 ];
@@ -266,6 +277,12 @@ const Experience = () => {
                           <p className="max-w-4xl text-[0.96rem] leading-7 text-muted-foreground">
                             {item.intro}
                           </p>
+                          {item.techStack?.length ? (
+                            <p className="mt-4 max-w-4xl text-sm leading-6 text-muted-foreground">
+                              <span className="font-medium text-foreground">Tech stack:</span>{" "}
+                              {item.techStack.join(", ")}
+                            </p>
+                          ) : null}
                           <ul className="mt-5 space-y-3 max-w-5xl text-[0.96rem] leading-7 text-muted-foreground">
                             {item.highlights.map((highlight) => (
                               <li key={highlight} className="flex gap-3">
