@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -192,6 +192,67 @@
 
   .hero-name-accent {
     color: var(--hero-name-accent);
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .section-label::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: hsl(var(--primary));
+  }
+
+  .heading-em {
+    font-style: italic;
+    color: hsl(var(--primary));
+  }
+
+  .pill-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--foreground));
+    padding: 0.7rem 1.35rem;
+    font-size: 0.9rem;
+    line-height: 1;
+    color: hsl(var(--foreground));
+    background-color: transparent;
+    transition:
+      transform 160ms var(--ease-out),
+      background-color 200ms var(--ease-out),
+      color 200ms var(--ease-out),
+      opacity 200ms var(--ease-out);
+  }
+
+  .pill-button:hover {
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .pill-button:active {
+    transform: scale(0.97);
+  }
+
+  .pill-button--solid {
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--background));
+  }
+
+  .pill-button--solid:hover {
+    opacity: 0.82;
+    background-color: hsl(var(--foreground));
+    color: hsl(var(--background));
   }
 
   .experience-panel {

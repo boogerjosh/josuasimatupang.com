@@ -126,18 +126,26 @@ const ProjectImageModal = ({ project }: { project: Project }) => {
 
 const Projects = () => {
   return (
-    <section id="projects" className="relative overflow-hidden py-16 sm:py-24 lg:py-28">
-      <div className="relative px-8">
-        <div className="max-w-3xl">
-          <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Product work <span className="text-primary">in practice.</span>
-          </h2>
-          <p className="mt-4 max-w-2xl text-lg text-muted-foreground sm:text-xl">
+    <section
+      id="projects"
+      className="relative overflow-hidden px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
+    >
+      <div className="relative">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-16">
+          <div>
+            <p className="section-label">Projects</p>
+
+            <h2 className="mt-6 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              Product work <span className="heading-em">in practice.</span>
+            </h2>
+          </div>
+
+          <p className="max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             A mix of public websites, recruitment products, and internal tools that connect frontend craft with clearer business outcomes.
           </p>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {projects.map((project) => {
             const previewImage = project.imageSrcs?.[0];
             const projectGallery = project.imageSrcs;
@@ -145,9 +153,13 @@ const Projects = () => {
             return (
               <article
                 key={project.title}
-                className="group rounded-[28px] border border-border/60 bg-card/72 p-6 shadow-[0_20px_50px_rgba(15,23,42,0.08)] backdrop-blur-sm motion-reduce-safe-colors transition-[border-color,background-color] duration-200 ease-out hover:border-border/90 hover:bg-card/85"
+                className="group flex flex-col rounded-[24px] border border-border/70 bg-card/50 p-6 motion-reduce-safe-colors transition-[border-color,background-color] duration-200 ease-out hover:border-border hover:bg-card/80 sm:p-7"
               >
                 <div className="flex items-start justify-between gap-4">
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
+                    {project.type}
+                  </p>
+
                   {projectGallery ? (
                     <Dialog>
                       <DialogTrigger asChild>
@@ -174,14 +186,11 @@ const Projects = () => {
                   ) : null}
                 </div>
 
-                <div className="mt-6">
-                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-                    {project.type}
-                  </p>
-                  <h3 className="mt-3 text-xl font-semibold text-foreground sm:text-[1.35rem]">
+                <div className="mt-6 flex-1">
+                  <h3 className="text-xl font-semibold text-foreground sm:text-[1.35rem]">
                     {project.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-7 text-muted-foreground sm:text-[0.96rem]">
+                  <p className="mt-4 max-w-prose text-sm leading-7 text-muted-foreground sm:text-[0.96rem]">
                     {project.description}
                   </p>
                 </div>
@@ -191,7 +200,7 @@ const Projects = () => {
                     <DialogTrigger asChild>
                       <button
                         type="button"
-                        className="mt-6 block w-full overflow-hidden border border-border/60 bg-background/70 text-left shadow-[0_14px_32px_rgba(15,23,42,0.08)] transition-[transform,opacity] duration-150 ease-out active:scale-[0.97] hover:opacity-90"
+                        className="mt-8 block w-full overflow-hidden rounded-[16px] border border-border/60 bg-background/70 text-left shadow-[0_14px_32px_rgba(15,23,42,0.08)] transition-[transform,opacity] duration-150 ease-out active:scale-[0.97] hover:opacity-90"
                         aria-label={`Open ${project.title} screenshot`}
                       >
                         <img

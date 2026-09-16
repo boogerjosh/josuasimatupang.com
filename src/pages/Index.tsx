@@ -5,7 +5,6 @@ import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/Footer";
-import BackgroundGrid from "@/components/BackgroundGrid";
 
 const Index = () => {
   return (

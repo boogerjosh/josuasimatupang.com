@@ -139,15 +139,20 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="relative overflow-hidden py-12">
-      <div className="relative px-8">
-        <div className="max-w-3xl">
+    <section
+      id="experience"
+      className="relative overflow-hidden px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24"
+    >
+      <div className="relative">
+        <p className="section-label">Experience</p>
+
+        <div className="mt-6 max-w-3xl">
           <h2 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Selected <span className="text-primary">experience.</span>
+            Selected <span className="heading-em">experience.</span>
           </h2>
         </div>
 
-        <div className="mt-12 hidden rounded-[28px] border border-border/60 bg-background/45 px-6 py-5 shadow-[0_24px_80px_rgba(15,23,42,0.08)] backdrop-blur-sm md:block">
+        <div className="mt-12 hidden rounded-[24px] border border-border/70 bg-card/50 px-6 py-5 md:block">
           <div className="flex items-center justify-between gap-6 font-mono text-xs text-muted-foreground">
             {years.map((year) => (
               <span key={year}>{year}</span>
@@ -190,8 +195,8 @@ const Experience = () => {
 
                 <div
                   className={`overflow-hidden rounded-[22px] border transition-[border-color,background-color,box-shadow] duration-300 ease-out ${isOpen
-                    ? "border-border/80 bg-card/90 shadow-[0_18px_48px_rgba(15,23,42,0.16)]"
-                    : "border-border/55 bg-card/58 hover:border-border/80 hover:bg-card/76"
+                    ? "border-border bg-card shadow-[0_18px_48px_rgba(15,23,42,0.12)]"
+                    : "border-border/60 bg-card/50 hover:border-border hover:bg-card/80"
                     }`}
                   style={isOpen ? { boxShadow: `inset 3px 0 0 ${item.accent}` } : undefined}
                 >
